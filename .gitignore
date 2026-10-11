@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+*.egg-info/
+build/
+dist/
+.venv/
+.ruff_cache/
+# never commit a real configuration or a rendered report
+config.json
+*.html

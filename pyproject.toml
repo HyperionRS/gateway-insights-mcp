@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gateway-insights-mcp"
+version = "0.1.0"
+description = "MCP servers for a payment gateway console: executive and decline analytics (read-only), and batch actions (changes data)."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "Apache-2.0" }
+dependencies = []
+classifiers = [
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+
+[project.scripts]
+gateway-insights-exec = "gateway_insights_exec.server:main"
+gateway-insights-decline = "gateway_insights_decline.server:main"
+gateway-insights-actions = "gateway_insights_actions.server:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+gateway_insights_core = ["themes/neutral/*.json"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py39"
