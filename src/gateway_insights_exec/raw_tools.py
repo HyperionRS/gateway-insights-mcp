@@ -158,7 +158,7 @@ def kpi_structured(data: Dict[str, Any]) -> Dict[str, Any]:
 def kpi_markdown(s: Scope, data: Dict[str, Any]) -> str:
     st = kpi_structured(data)
     cur = st["currency"]
-    out = [f"### Executive KPI", period_line(s) + (f" · {md_escape(cur)}" if cur else "")]
+    out = ["### Executive KPI", period_line(s) + (f" · {md_escape(cur)}" if cur else "")]
     for flow in ("deposit", "withdrawal"):
         rows = []
         for label, key, unit, *_ in KPI_METRICS:
